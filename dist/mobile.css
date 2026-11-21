@@ -1,0 +1,15 @@
+/* Touch-sized controls; the board scrolls independently of the page. */
+@media(max-width:700px){
+ html{scroll-padding-bottom:160px}body{padding-bottom:env(safe-area-inset-bottom);-webkit-text-size-adjust:100%}
+ header{height:auto;min-height:72px;padding:12px 16px;gap:8px;flex-wrap:wrap}header nav{gap:16px}header nav button{min-height:44px;padding:8px 0}#help{display:block}.brand{font-size:22px}
+ main{padding:0 12px}.intro{padding:24px 4px}.intro p{font-size:13px}.size-menu{margin-bottom:24px}.size-menu nav button{min-height:92px}.size-menu small{font-size:12px}
+ .browsing .puzzle-picker h2{display:block;margin:12px 0 16px}.search-label input,.collection-filters select{font-size:16px;min-height:46px}.status-filters button{min-height:44px;font-size:12px}
+ .browsing .puzzle-card{padding:12px;gap:10px}.browsing .thumb{height:100px}.browsing .thumb svg{width:80px;height:80px}.puzzle-status{font-size:11px}
+ .game{padding:14px 10px;border-radius:14px;scroll-margin-top:8px}.back-to-puzzles{min-height:44px;padding:0 0 10px;font-size:14px}.game-heading h2{font-size:20px}.timer{font-size:14px}
+ .board-controls{padding:8px;gap:8px;margin-top:14px;flex-wrap:wrap}.zoom-controls{gap:8px}.zoom-controls button{min-width:44px;height:44px}.zoom-controls output{font-size:13px}#focusBoard{min-height:44px;padding:8px;font-size:12px}
+ .large-note{font-size:12px;line-height:1.7;margin:10px 0}.board-area,.large-puzzle .board-area{width:100%;max-width:100%;height:auto;max-height:56dvh;min-height:0;margin:10px 0;border:1px solid #d8dfce;overscroll-behavior:contain}#board{margin:0 auto}.clue{font-size:12px}.board-position{font-size:11px}
+ .toolbar{position:sticky;bottom:0;z-index:10;background:#fffef9;border:1px solid #dce3d0;border-radius:12px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -4px 16px #253d3612;display:flex;flex-direction:column;gap:8px}
+ .modes{display:flex;width:100%;gap:4px}.modes button{min-height:48px;flex:1;padding:8px 3px}.modes span{display:block;font-size:12px;margin:2px 0 0}.tools{display:flex;justify-content:space-around;width:100%;gap:8px}.tools button{min-height:44px;flex:1;font-size:18px}.tools button span{font-size:12px}
+ .controls-note{font-size:11px}.minimap-wrap{gap:12px}.minimap-wrap p{font-size:11px}dialog{max-height:85dvh;overflow:auto;padding:24px}dialog button{min-height:44px}#complete button,.gallery-card button{min-height:44px}footer{gap:12px;flex-wrap:wrap;margin:24px 12px 0}
+}
+@media(max-width:360px){header nav{gap:12px}header nav button{font-size:11px}.size-menu nav button{padding:12px}.browsing .card-text strong{font-size:12px}}
