@@ -5,7 +5,7 @@
 ## GitHub Pages에서 플레이
 
 <!-- pages-link:start -->
-첫 GitHub Pages 배포가 완료되면 이곳에 게임 실행 링크가 표시됩니다.
+[칸꽃 바로 플레이하기](<https://jw001522.github.io/kanflower/>)
 <!-- pages-link:end -->
 
 ## 게임 스크린샷
