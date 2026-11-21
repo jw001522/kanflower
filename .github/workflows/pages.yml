@@ -1,0 +1,73 @@
+name: Deploy Kanflower
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * 1'
+      timezone: 'Asia/Seoul'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kanflower-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out site files
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Set the automation commit identity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Generate upcoming weekly puzzles
+        run: node refill-weekly.cjs
+      - name: Verify puzzle solutions and release behavior
+        run: |
+          node check.cjs
+          node smoke.cjs
+          node revision-check.cjs
+      - name: Report upcoming Mondays
+        run: node report-release-queue.cjs
+      - name: Save new puzzles to the repository
+        env:
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git add -- dist/weekly-puzzles.js
+          if ! git diff --cached --quiet; then
+            git commit -m 'Prepare upcoming weekly puzzles'
+            git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          fi
+      - name: Package the static site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Add the published game link to the README
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          node update-readme-link.cjs
+          git add -- README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update the GitHub Pages link'
+            git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          fi
