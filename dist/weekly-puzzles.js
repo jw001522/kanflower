@@ -379,5 +379,100 @@ const WEEKLY_RELEASES = [
         ]
       }
     ]
+  },
+  {
+    "publishAt": "2026-12-21T10:00:00+09:00",
+    "puzzles": [
+      {
+        "id": "cup5-20261221",
+        "name": "청록색 찻잔",
+        "size": 5,
+        "category": "소품",
+        "bg": "#f4e7e0",
+        "givens": [],
+        "rows": [
+          ".....",
+          "tttt.",
+          "tktkk",
+          "ttt.k",
+          "ttkkk"
+        ]
+      },
+      {
+        "id": "mushroom10-20261221",
+        "name": "분홍빛 버섯",
+        "size": 10,
+        "category": "자연",
+        "bg": "#e6ecd9",
+        "givens": [],
+        "rows": [
+          "...pppp...",
+          "..pppppp..",
+          ".ppkppppp.",
+          ".pppppkpp.",
+          "ppppppppp.",
+          "ppppppppp.",
+          "pppppppppp",
+          "...kkkk...",
+          "...kkkk...",
+          "...kkkkp.."
+        ]
+      },
+      {
+        "id": "shirt15-20261221",
+        "name": "주황빛 티셔츠",
+        "size": 15,
+        "category": "소품",
+        "bg": "#f4e7e0",
+        "givens": [],
+        "rows": [
+          "...rr....rr....",
+          "...rr....rr....",
+          "..rrrrkkrrrr...",
+          "rrrrrrkkrrrrrr.",
+          "rrrrrrkkrrrrrr.",
+          "rrrrrrrrrrrrrr.",
+          "rrrrrrrrrrrr...",
+          "rrrrrrrrrrrr...",
+          "...rrrrrrrr....",
+          "...rrrrrrrr....",
+          "...rrrrrrrr....",
+          "...rrrrrrrr....",
+          "...rrrrrrrr....",
+          "...rrrrrrrr....",
+          "..............."
+        ]
+      },
+      {
+        "id": "pear20-20261221",
+        "name": "청록색 서양배",
+        "size": 20,
+        "category": "자연",
+        "bg": "#e6ecd9",
+        "givens": [],
+        "rows": [
+          "....................",
+          ".....ttttkk.........",
+          ".....ttttkk.........",
+          ".......ttttkk.......",
+          ".......ttttkk.......",
+          ".......tttttt.......",
+          ".......tttttt.......",
+          ".....tttttttttt.....",
+          ".....tttttttttt.....",
+          ".....tttttttttt.....",
+          ".....tttttttttt.....",
+          "...tttttttttttttt...",
+          "...tttttttttttttt...",
+          "...ttttttttttkktt...",
+          "...ttttttttttkktt...",
+          ".....tttttttttt.....",
+          ".....tttttttttt.....",
+          ".....tttttttttt.....",
+          ".....tttttttttt.....",
+          "...................."
+        ]
+      }
+    ]
   }
 ];
